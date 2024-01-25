@@ -1,0 +1,147 @@
+\documentclass[master]{NTHUthesis}
+\usepackage[utf8]{inputenc}
+\usepackage{libertine}
+\usepackage{libertinust1math}
+\usepackage[utf8]{inputenc}
+\usepackage{xeCJK}
+\setCJKmainfont{AR PL UKai TW}
+\setCJKmonofont{AR PL UKai TW}
+
+%%% Customization  %%%
+\usepackage{zhlipsum, lipsum}   % dummy text
+\usepackage{graphicx}           % figures
+\usepackage{booktabs}           % tables
+\usepackage[ruled]{algorithm2e} % algorithms, list of algorithms
+%\usepackage{cite}               % bibliography
+
+% Bibliography
+\usepackage[backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2, maxbibnames=99]{biblatex}
+\addbibresource{ref.bib} %Import the bibliography file
+\renewcommand*{\nameyeardelim}{\space}
+\renewcommand*{\postnotedelim}{\addcolon\space}
+\renewcommand*{\bibpagespunct}{\addcolon\space}
+\DefineBibliographyStrings{english}{%
+  page             = {},
+  pages            = {},
+} 
+%\renewcommand*{\bibfont}{\footnotesize}
+
+\newcommand{\sameyear}[1]{}
+
+\usepackage{xpatch}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+\xpatchbibmacro{date+extradate}{%
+  \printtext[parens]%
+}{%
+  \setunit{\addperiod\space}%
+  \printtext%
+}{}{}
+
+\NewBibliographyString{toappear}
+\DefineBibliographyStrings{english}{%
+  toappear = {to appear},
+}
+
+%Add comma between two authors in bibliography only
+\AtBeginBibliography{\renewcommand*{\finalnamedelim}{
+  \finalandcomma
+  \addspace\bibstring{and}\space}  
+ }
+
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection]{citetitle}{#1}
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection]{title}{#1}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[article,book,inproceedings,misc,inbook,incollection,thesis]{addendum}{#1\nopunct}
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection,thesis]{volume}{#1}
+\renewbibmacro{in:}{}
+
+\DefineBibliographyStrings{american}{phdthesis = {PhD dissertation}}
+\urlstyle{same}
+
+%%END Bibliography Setup%%
+
+%%% Necessary %%%
+\titleZH{Kari Seediq 這是一個中文標題 }
+\titleEN{This an English title}
+\instituteZH{語言學研究所}
+\studentID{111044501}
+\studentZH{宋硯之}
+\studentEN{Walis Hian-chi Song}
+\advisorZH{廖秀娟~~博士}
+\advisorEN{Dr. Hsiu-chuan Liao}
+\yearZH{2024}
+\monthZH{7}
+
+% Comment the following to have chapters numbered without interruption (numbering through parts)
+\makeatletter\@addtoreset{chapter}{part}\makeatother%
+
+\begin{document}
+
+\makecover
+
+\pagenumbering{Roman}
+
+%%% Necessary %%%
+\begin{abstractEN}
+\lipsum[1-2]
+\end{abstractEN}
+
+%%% Optional %%%
+\begin{abstractSED}
+\lipsum[1-2]
+\end{abstractSED}
+
+%%% Necessary %%%
+\begin{abstractZH}
+\zhlipsum[1-2]
+\end{abstractZH}
+
+%%% Optional %%%
+\begin{acknowledgementsEN}
+\lipsum[1-2]
+\end{acknowledgementsEN}
+
+%%% Necessary %%%
+\maketoc
+
+%%% Optional %%%
+\phantomsection
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\clearpage
+
+\pagenumbering{arabic}
+
+%\part{English Version}
+
+\chapter{Introduction}
+\lipsum[1-3]
+
+\chapter{Literature review}
+\lipsum[1-3]
+
+\section{Section Title}
+\lipsum[4-5]
+
+\subsection{Subsection Title}
+\lipsum[6]
+
+
+
+%%%%%%%%%%% 中文版 %%%%%%%%%%%
+
+% \part{中文版}
+% ffdf
+% \chapter{前言}
+% \section{研究方法}
+% ʡŋ 
+% \section{測試標題}
+
+%%%%%%%%%%% 中文版 %%%%%%%%%%%
+
+\newpage
+\addcontentsline{toc}{part}{References}
+\printbibliography[title={References}]
+
+\end{document}
