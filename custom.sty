@@ -1,3 +1,4 @@
+% 縮寫 %
 \usepackage{xspace}
 \newcommand{\pan}{\textsc{PAn}\xspace}
 \newcommand{\panf}{Proto-Austronesian\xspace}
@@ -39,9 +40,9 @@
 \newcommand{\setrf}{Eastern Truku\xspace}
 
 \newcommand{\xb}[1]{\textsubscript{#1}}
+% 縮寫 %
 
-% subsubsection 以下層級
-
+% subsubsection 以下層級 %
 \usepackage{titlesec}
 \usepackage{hyperref}
 
@@ -75,3 +76,51 @@
 
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{3}
+% subsubsection 以下層級 %
+
+% Bibliography
+\usepackage[backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2, maxbibnames=99]{biblatex}
+\addbibresource{ref.bib} %Import the bibliography file
+\renewcommand*{\nameyeardelim}{\space}
+\renewcommand*{\postnotedelim}{\addcolon\space}
+\renewcommand*{\bibpagespunct}{\addcolon\space}
+\DefineBibliographyStrings{english}{%
+  page             = {},
+  pages            = {},
+} 
+%\renewcommand*{\bibfont}{\footnotesize}
+
+\newcommand{\sameyear}[1]{}
+
+\usepackage{xpatch}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+\xpatchbibmacro{date+extradate}{%
+  \printtext[parens]%
+}{%
+  \setunit{\addperiod\space}%
+  \printtext%
+}{}{}
+
+\NewBibliographyString{toappear}
+\DefineBibliographyStrings{english}{%
+  toappear = {to appear},
+}
+
+%Add comma between two authors in bibliography only
+\AtBeginBibliography{\renewcommand*{\finalnamedelim}{
+  \finalandcomma
+  \addspace\bibstring{and}\space}  
+ }
+
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection]{citetitle}{#1}
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection]{title}{#1}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[article,book,inproceedings,misc,inbook,incollection,thesis]{addendum}{#1\nopunct}
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection,thesis]{volume}{#1}
+\renewbibmacro{in:}{}
+
+\DefineBibliographyStrings{american}{phdthesis = {PhD dissertation}}
+\urlstyle{same}
+
+%%END Bibliography Setup%%
