@@ -1,51 +1,64 @@
-% 縮寫 %
-\usepackage{xspace}
-\newcommand{\pan}{\textsc{PAn}\xspace}
-\newcommand{\panf}{Proto-Austronesian\xspace}
+\usepackage[linguistics]{forest}
+\usepackage[utf8]{inputenc}
+\usepackage{libertine}
+\usepackage{libertinust1math}
+\usepackage[utf8]{inputenc}
+\usepackage{xeCJK}
+\setCJKmainfont{AR PL UKai TW}
+\setCJKmonofont{AR PL UKai TW}
+\setCJKsansfont{Noto Serif CJK TC}
+\usepackage{pdfpages}
+\usepackage{pdflscape}
+\usepackage{subfiles} % 引入子文件
 
-\newcommand{\paic}{\textsc{PAic}\xspace}
-\newcommand{\paicf}{Proto-Atayalic\xspace}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+%\hypersetup{breaklinks=true}
 
-\newcommand{\pata}{\textsc{PAta}\xspace}
-\newcommand{\pataf}{Proto-Atayal\xspace}
-\newcommand{\ata}{\textsc{Ata}\xspace}
 
-\newcommand{\psed}{\textsc{PSed}\xspace}
-\newcommand{\sed}{\textsc{Sed}\xspace}
-\newcommand{\psedf}{Proto-Seediq\xspace}
 
-\newcommand{\stg}{\textsc{Tg}\xspace}
-\newcommand{\stgf}{Tgdaya\xspace}
+%%% Customization  %%%
+\usepackage{zhlipsum, lipsum}   % dummy text
+\usepackage{graphicx}           % figures
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{booktabs}           % tables
+\usepackage[ruled]{algorithm2e} % algorithms, list of algorithms
+\usepackage{gb4e} %Glossing 用
+\noautomath %防止gb4e爆掉
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{multicol}
+\usepackage{caption} 
+\captionsetup[table]{skip=7pt} %表格caption間距
+\usepackage{chngpage} % allows for temporary adjustment of side margins
+%\usepackage{cite}               % bibliography
+\usepackage{xcolor} 
 
-\newcommand{\ptotr}{\textsc{PTo-Tr}\xspace}
-\newcommand{\ptotrf}{Proto-Toda-Truku\xspace}
-\newcommand{\totrf}{Toda-Truku\xspace}
+% 以下是在圖表目錄加上前綴 %
+\usepackage{tocloft} %TOC裡的Table Figure
+% for figures
+\renewcommand{\cftfigpresnum}{Figure } % put before the number
+%\renewcommand{\cftfigaftersnum}{: }  % put after the number
+% adjust spacing
+\newlength{\mylen}
+\settowidth{\mylen}{\cftfigpresnum}
+\addtolength{\cftfignumwidth}{\mylen}
+% for tables
+\renewcommand{\cfttabpresnum}{Table } % put before the number
+%\renewcommand{\cfttabaftersnum}{: }  % put after the number
+% adjust spacing
+\newlength{\mylentwo}
+\settowidth{\mylentwo}{\cfttabpresnum}
+\addtolength{\cfttabnumwidth}{\mylentwo}
 
-\newcommand{\sto}{\textsc{PTo}\xspace}
-\newcommand{\stof}{Proto-Toda\xspace}
 
-\newcommand{\scto}{\textsc{CTo}\xspace}
-\newcommand{\sctof}{Central Toda\xspace}
-
-\newcommand{\seto}{\textsc{ETo}\xspace}
-\newcommand{\setof}{Eastern Toda\xspace}
-
-\newcommand{\ptr}{\textsc{PTr}\xspace}
-\newcommand{\ptrf}{Proto-Truku\xspace}
-
-\newcommand{\sctr}{\textsc{CTr}\xspace}
-\newcommand{\sctrf}{Central Truku\xspace}
-
-\newcommand{\setr}{\textsc{ETr}\xspace}
-\newcommand{\setrf}{Eastern Truku\xspace}
-
+% 自訂指令 %
 \newcommand{\xb}[1]{\textsubscript{#1}}
-% 縮寫 %
+\newcommand{\aikai}[1]{\textcolor{red}{\textbf{#1}}}
 
 % subsubsection 以下層級 %
 \usepackage{titlesec}
-\usepackage{hyperref}
-\hypersetup{hidelinks}
 
 \titleclass{\subsubsubsection}{straight}[\subsection]
 
@@ -81,6 +94,12 @@
 
 % Bibliography
 \usepackage[backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2, maxbibnames=99]{biblatex}
+
+\setcounter{biburllcpenalty}{100}
+\setcounter{biburlucpenalty}{200}
+\setcounter{biburlnumpenalty}{100}
+
+
 \addbibresource{ref.bib} %Import the bibliography file
 \renewcommand*{\nameyeardelim}{\space}
 \renewcommand*{\postnotedelim}{\addcolon\space}
@@ -123,5 +142,6 @@
 
 \DefineBibliographyStrings{american}{phdthesis = {PhD dissertation}}
 \urlstyle{same}
+
 
 %%END Bibliography Setup%%

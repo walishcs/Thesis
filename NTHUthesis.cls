@@ -33,7 +33,8 @@
 \fi
 
 % Default spacing
-\setstretch{1.8}
+\setstretch{2}
+\renewcommand{\arraystretch}{1.5} %表格行高
 
 % Declared variables
 \newcommand{\titleZH}[1]{\gdef\@titleZH{#1}}
@@ -82,8 +83,9 @@
 \newcommand{\maketoc}{
     \tableofcontents
     \clearpage
-    \listoffigures
     \listoftables
+    \newpage
+    \listoffigures
     \clearpage
 }
 

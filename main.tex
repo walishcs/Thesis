@@ -1,33 +1,6 @@
 \documentclass[master]{NTHUthesis}
-\usepackage[utf8]{inputenc}
-\usepackage{libertine}
-\usepackage{libertinust1math}
-\usepackage[utf8]{inputenc}
-\usepackage{xeCJK}
-\setCJKmainfont{AR PL UKai TW}
-\setCJKmonofont{AR PL UKai TW}
-\usepackage{pdfpages}
-\usepackage{pdflscape}
-\usepackage{subfiles} % 引入子文件
-
-
-%%% Customization  %%%
+\usepackage{abbr}
 \usepackage{custom}
-\usepackage{zhlipsum, lipsum}   % dummy text
-\usepackage{graphicx}           % figures
-\usepackage{float}
-\usepackage{enumitem}
-\usepackage{booktabs}           % tables
-\usepackage[ruled]{algorithm2e} % algorithms, list of algorithms
-\usepackage{gb4e} %Glossing 用
-\noautomath %防止gb4e爆掉
-\usepackage[normalem]{ulem}
-\useunder{\uline}{\ul}{}
-\usepackage{multicol}
-\usepackage{caption} 
-\captionsetup[table]{skip=7pt} %表格caption間距
-\usepackage{chngpage} % allows for temporary adjustment of side margins
-%\usepackage{cite}               % bibliography
 
 
 
@@ -77,8 +50,8 @@
 
 %%% Optional %%%
 \phantomsection
-\listofalgorithms
-\addcontentsline{toc}{chapter}{List of Algorithms}
+\printacronyms[name=List of Abbreviations]
+\addcontentsline{toc}{chapter}{List of Abbreviations}
 
 
 \clearpage
@@ -86,28 +59,29 @@
 \pagenumbering{arabic}
 
 %\part{English Version}
+\raggedright
+\setlength\parindent{2em}
 
-\subfile{sub/ch01}
-\subfile{sub/ch02}
-\subfile{sub/ch03}
-\subfile{sub/ch04}
-\subfile{sub/ch05}
-\subfile{sub/ch06}
-\subfile{sub/ch07}
+
+\input{sub/ch01}
+\input{sub/ch02}
+\input{sub/ch03}
+\input{sub/ch04}
+\input{sub/ch05}
+\input{sub/ch06}
+\input{sub/ch07}
 
 %%%%%%%%%%% 中文版 %%%%%%%%%%%
 
 % \part{中文版}
-% ffdf
-% \chapter{前言}
-% \section{研究方法}
-% 
-% \section{測試標題}
 
 %%%%%%%%%%% 中文版 %%%%%%%%%%%
 
 \newpage
+\begingroup
+\sloppy
 \addcontentsline{toc}{part}{References}
 \printbibliography[title={References}]
+\endgroup
 
 \end{document}
