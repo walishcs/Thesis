@@ -34,7 +34,7 @@
 
 % Default spacing
 \setstretch{2}
-\renewcommand{\arraystretch}{1.5} %表格行高
+\renewcommand{\arraystretch}{2} %表格行高
 
 % Declared variables
 \newcommand{\titleZH}[1]{\gdef\@titleZH{#1}}

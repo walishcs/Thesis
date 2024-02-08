@@ -10,7 +10,6 @@
 \usepackage{pdfpages}
 \usepackage{pdflscape}
 \usepackage{subfiles} % 引入子文件
-
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 %\hypersetup{breaklinks=true}
@@ -23,7 +22,11 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{booktabs}           % tables
-\usepackage[ruled]{algorithm2e} % algorithms, list of algorithms
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{arydshln}
 \usepackage{gb4e} %Glossing 用
 \noautomath %防止gb4e爆掉
 \usepackage[normalem]{ulem}
@@ -34,6 +37,7 @@
 \usepackage{chngpage} % allows for temporary adjustment of side margins
 %\usepackage{cite}               % bibliography
 \usepackage{xcolor} 
+\usepackage{filecontents} %加入參考文獻說明
 
 % 以下是在圖表目錄加上前綴 %
 \usepackage{tocloft} %TOC裡的Table Figure
@@ -93,7 +97,10 @@
 % subsubsection 以下層級 %
 
 % Bibliography
+
 \usepackage[backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2, maxbibnames=99]{biblatex}
+
+%\defbibnote{bib-intro}{\textsf{\lipsum[1]}}
 
 \setcounter{biburllcpenalty}{100}
 \setcounter{biburlucpenalty}{200}
