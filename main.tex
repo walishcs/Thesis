@@ -1,7 +1,5 @@
 \documentclass[master]{NTHUthesis}
-\usepackage{abbr}
 \usepackage{custom}
-
 
 
 %%% Necessary %%%
@@ -49,13 +47,21 @@
 \maketoc
 
 %%% Optional %%%
+\begingroup
 \phantomsection
-\printacronyms[name=List of Abbreviations]
+\chapter*{List of Abbreviations}
+\setstretch{2}
+%\printacronyms[name=List of Abbreviations]
+\begin{flushleft}
+    \begin{multicols}{2}
+        \printacronyms[heading=none]
+    \end{multicols}  
+\end{flushleft}
 \addcontentsline{toc}{chapter}{List of Abbreviations}
+\endgroup
 
 
 \clearpage
-
 \pagenumbering{arabic}
 
 %\part{English Version}
@@ -66,7 +72,7 @@
 \input{sub/ch01}
 \input{sub/ch02}
 \input{sub/ch03}
-%\input{sub/ch04}
+\input{sub/ch04}
 %\input{sub/ch05}
 %\input{sub/ch06}
 %\input{sub/ch07}

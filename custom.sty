@@ -14,9 +14,11 @@
 \hypersetup{hidelinks}
 %\hypersetup{breaklinks=true}
 
-
-
 %%% Customization  %%%
+\usepackage{acro}
+\acsetup{make-links}
+\usepackage{longtable}
+\usepackage{abbr} % 縮寫
 \usepackage{zhlipsum, lipsum}   % dummy text
 \usepackage{graphicx}           % figures
 \usepackage{float}
@@ -24,7 +26,6 @@
 \usepackage{booktabs}           % tables
 \usepackage{multirow}
 \usepackage{array}
-\usepackage{longtable}
 \usepackage{makecell}
 \usepackage{arydshln}
 \usepackage{gb4e} %Glossing 用
@@ -33,11 +34,14 @@
 \useunder{\uline}{\ul}{}
 \usepackage{multicol}
 \usepackage{caption} 
-\captionsetup[table]{skip=7pt} %表格caption間距
+\captionsetup[table]{skip=10pt} %表格caption間距
+\setlength{\intextsep}{30pt plus 2pt minus 2pt} % 文本中的浮動體上下間距
+\setlength{\textfloatsep}{20pt plus 2pt minus 4pt} % 頁面頂部或底部浮動體與文本之間的間距
 \usepackage{chngpage} % allows for temporary adjustment of side margins
 %\usepackage{cite}               % bibliography
 \usepackage{xcolor} 
 \usepackage{filecontents} %加入參考文獻說明
+
 
 % 以下是在圖表目錄加上前綴 %
 \usepackage{tocloft} %TOC裡的Table Figure
