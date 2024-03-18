@@ -80,12 +80,28 @@
 \end{titlepage}
 }
 
+% 做新的label %
+\usepackage{tocbasic}
+\DeclareNewTOC[%
+  type=map,
+  float,
+  name=Map,
+  listname={List of Maps},
+  ]{map}
+\renewcommand{\themap}{\thechapter.\arabic{map}}
+
+
 \newcommand{\maketoc}{
     \tableofcontents
     \clearpage
     \listoftables
     \newpage
+    %\begingroup
+    %\let\clearpage\relax
     \listoffigures
+    %\listofmaps
+    %\addcontentsline{toc}{chapter}{List of Maps}
+    %\endgroup
     \clearpage
 }
 
