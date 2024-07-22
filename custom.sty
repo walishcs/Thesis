@@ -17,8 +17,8 @@
 %%% Customization  %%%
 \usepackage{acro}
 \acsetup{make-links}
-\usepackage{longtable}
 \usepackage{abbr} % 縮寫
+\usepackage{longtable}
 \usepackage{zhlipsum, lipsum}   % dummy text
 \usepackage{graphicx}           % figures
 \usepackage{float}
@@ -43,24 +43,54 @@
 \usepackage{filecontents} %加入參考文獻說明
 
 
-% 以下是在圖表目錄加上前綴 %
+% % 以下是在圖表目錄加上前綴 %
 \usepackage{tocloft} %TOC裡的Table Figure
-% for figures
-\renewcommand{\cftfigpresnum}{Figure } % put before the number
-%\renewcommand{\cftfigaftersnum}{: }  % put after the number
-% adjust spacing
-\newlength{\mylen}
-\settowidth{\mylen}{\cftfigpresnum}
-\addtolength{\cftfignumwidth}{\mylen}
-% for tables
-\renewcommand{\cfttabpresnum}{Table } % put before the number
-%\renewcommand{\cfttabaftersnum}{: }  % put after the number
-% adjust spacing
-\newlength{\mylentwo}
-\settowidth{\mylentwo}{\cfttabpresnum}
-\addtolength{\cfttabnumwidth}{\mylentwo}
 
+\usepackage{float}
+\usepackage{caption}
 
+% 定義新的浮動環境 Map
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[
+    fileext=lom,
+    listname={List of Maps},
+    name=Map,
+    placement=htbp,
+    within=chapter
+]{map}
+
+% 使 Map 計數器隨章節重置
+\usepackage{chngcntr}
+\counterwithin{map}{chapter}
+
+% 自定義 List of Maps 的項目格式
+\newlistof{map}{lom}{List of Maps}
+
+% 修改 List of Tables, Figures 的條目樣式
+
+\renewcommand{\cfttabpresnum}{Table~} % List of FIgures set up <<<<<<<<
+\setlength{\cfttabnumwidth}{5ex}
+\setlength{\cfttabindent}{0ex}
+\newlength{\tablen}% a pre tabure title length
+\settowidth{\tablen}{\bfseries\cfttabpresnum} % the word Table~
+\addtolength{\tablen}{\cfttabnumwidth}
+\renewcommand{\cfttabnumwidth}{\tablen}
+
+\renewcommand{\cftfigpresnum}{Figure~} % List of FIgures set up <<<<<<<<
+\setlength{\cftfignumwidth}{5ex}
+\setlength{\cftfigindent}{0ex}
+\newlength{\figlen}% a pre figure title length
+\settowidth{\figlen}{\bfseries\cftfigpresnum} % the word Figure~
+\addtolength{\figlen}{\cftfignumwidth}
+\renewcommand{\cftfignumwidth}{\figlen}
+
+\renewcommand{\cftmappresnum}{Map~} % List of map set up <<<<<<<<<<<<<<<<
+\setlength{\cftmapnumwidth}{5ex}
+\setlength{\cftmapindent}{0ex}
+\newlength{\maplen}% a pre photo  title length
+\settowidth{\maplen}{\bfseries\cftmappresnum} % the word map~
+\addtolength{\maplen}{\cftmapnumwidth}
+\renewcommand{\cftmapnumwidth}{\maplen}
 
 
 % 自訂指令 %
@@ -73,7 +103,7 @@
 \newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
 
 \setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
+\setcounter{tocdepth}{2}
 % subsubsection 以下層級 %
 
 % Bibliography

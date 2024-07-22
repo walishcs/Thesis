@@ -72,8 +72,8 @@
     \end{tabular}\\
     \vspace{1.5\baselineskip}
     %中~~華~~民~~國~~
-    \zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月\\
-    July 2024\\
+    \zhdigits{\@yearZH}~~年~~{\@monthZH}~~月\\
+    December 2024\\
     \end{spacing}
     \end{CJK*}
     \end{center}
@@ -81,14 +81,16 @@
 }
 
 % 做新的label %
-\usepackage{tocbasic}
-\DeclareNewTOC[%
-  type=map,
-  float,
-  name=Map,
-  listname={List of Maps},
-  ]{map}
-\renewcommand{\themap}{\thechapter.\arabic{map}}
+% \usepackage{tocbasic}
+% \DeclareNewTOC[%
+%   type=map,
+%   float,
+%   name=Map,
+%   listname={List of Maps},
+%   ]{map}
+% \renewcommand{\themap}{\thechapter.\arabic{map}}
+
+
 
 
 \newcommand{\maketoc}{
@@ -99,8 +101,9 @@
     %\begingroup
     %\let\clearpage\relax
     \listoffigures
+    \listofmaps
     %\listofmaps
-    %\addcontentsline{toc}{chapter}{List of Maps}
+    \addcontentsline{toc}{chapter}{List of Maps}
     %\endgroup
     \clearpage
 }
