@@ -1,2 +1,8 @@
 
 .DS_Store
+*.bbl
+*.lom
+*.xml
+*.gz
+*.fls
+*.blg
