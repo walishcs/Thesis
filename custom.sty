@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{libertine}
 \usepackage{libertinust1math}
-\usepackage[utf8]{inputenc}
+\usepackage{unicode-math}
 \usepackage{xeCJK}
 \setCJKmainfont{AR PL UKai TW}
 \setCJKmonofont{AR PL UKai TW}
@@ -30,6 +30,8 @@
 \usepackage{arydshln}
 \usepackage{gb4e} %Glossing 用
 \noautomath %防止gb4e爆掉
+\usepackage{etoolbox} %gb4e 第一行斜體
+\pretocmd{\gll}{\def\eachwordone{\itshape}\def\eachwordtwo{\normalfont}}{}{}%gb4e 第一行斜體
 \usepackage[normalem]{ulem}
 \useunder{\uline}{\ul}{}
 \usepackage{multicol}
@@ -42,9 +44,31 @@
 \usepackage{xcolor} 
 \usepackage{filecontents} %加入參考文獻說明
 
+% subsubsection 以下層級 %
+\usepackage{titlesec}
+
+%標題字型
+\usepackage{fontspec}
+\newfontface\chapterfont{ChiayiCity.ttf}
+
+\titleformat{\chapter}[display]
+{\chapterfont\bfseries\filcenter}
+{\huge\chaptername~\thechapter} %
+{6ex}
+{\Huge\thispagestyle{empty}}
+
+% \titleformat{\section}
+%   {\chapterfont\large\bfseries} % 使用指定的章節標題字型
+%   {\thesection.}{10pt}{\large}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+% subsubsection 以下層級 %
+
 
 % % 以下是在圖表目錄加上前綴 %
 \usepackage{tocloft} %TOC裡的Table Figure
+
 
 \usepackage{float}
 \usepackage{caption}
@@ -65,6 +89,16 @@
 
 % 自定義 List of Maps 的項目格式
 \newlistof{map}{lom}{List of Maps}
+
+
+\renewcommand{\cfttoctitlefont}{\chapterfont\hspace*{\fill}\Huge\bfseries}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+\renewcommand{\cftlottitlefont}{\chapterfont\hspace*{\fill}\Huge\bfseries}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+\renewcommand{\cftloftitlefont}{\chapterfont\hspace*{\fill}\Huge\bfseries}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}}
+\renewcommand{\cftlomtitlefont}{\chapterfont\hspace*{\fill}\Huge\bfseries}
+\renewcommand{\cftafterlomtitle}{\hspace*{\fill}}
 
 % 修改 List of Tables, Figures 的條目樣式
 
@@ -97,13 +131,9 @@
 \newcommand{\shb}[1]{\textsuperscript{#1}}
 \newcommand{\xb}[1]{\textsubscript{#1}}
 \newcommand{\aikai}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\cvc}{$\symbb{CVC}$\xspace}
 
-% subsubsection 以下層級 %
-\usepackage{titlesec}
 
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{2}
-% subsubsection 以下層級 %
 
 % Bibliography
 
@@ -161,3 +191,4 @@
 
 
 %%END Bibliography Setup%%
+
