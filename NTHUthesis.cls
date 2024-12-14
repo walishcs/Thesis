@@ -4,7 +4,7 @@
 \LoadClass[a4paper,12pt]{report}
 
 % Required packages
-\RequirePackage[top=1in,bottom=1in]{geometry}
+\RequirePackage[margin=1in]{geometry}
 \RequirePackage{indentfirst}
 \RequirePackage{setspace}
 \RequirePackage{CJKutf8}
