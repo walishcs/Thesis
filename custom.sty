@@ -32,6 +32,13 @@
 \noautomath %防止gb4e爆掉
 \usepackage{etoolbox} %gb4e 第一行斜體
 \pretocmd{\gll}{\def\eachwordone{\itshape}\def\eachwordtwo{\normalfont}}{}{}%gb4e 第一行斜體
+
+%gb4e 行距
+\newcommand{\setexamplelinespacing}{
+    \renewcommand{\baselinestretch}{1.5}\selectfont
+}
+\AtBeginEnvironment{exe}{\setexamplelinespacing}
+
 \usepackage[normalem]{ulem}
 \useunder{\uline}{\ul}{}
 \usepackage{multicol}
