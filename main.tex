@@ -84,12 +84,13 @@
 
 %%%%%%%%%%% 中文版 %%%%%%%%%%%
 
-\newpage
 \begin{flushleft}
 \begingroup
 \sloppy
-\printbibliography[title={References},prenote={bib-intro}]
+\clearpage
+\phantomsection
 \addcontentsline{toc}{chapter}{References}
+\printbibliography[title={References}] %,prenote={bib-intro}
 \endgroup
 \end{flushleft}
 

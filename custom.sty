@@ -10,9 +10,23 @@
 \usepackage{pdfpages}
 \usepackage{pdflscape}
 \usepackage{subfiles} % 引入子文件
-\usepackage{hyperref}
+\usepackage[colorlinks]{hyperref}
+
+
+% for back reference in bibliography
+\usepackage[colorlinks,pdfusetitle]{hyperref}
+
+% for biblatex with biber
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  citestyle=alphabetic,
+  backref=true]{biblatex}
+
+% for DOI field
+\usepackage{doi}
 \hypersetup{hidelinks}
-%\hypersetup{breaklinks=true}
+\hypersetup{breaklinks=true}
 
 %%% Customization  %%%
 \usepackage{acro}
