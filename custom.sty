@@ -10,18 +10,11 @@
 \usepackage{pdfpages}
 \usepackage{pdflscape}
 \usepackage{subfiles} % 引入子文件
-\usepackage[colorlinks]{hyperref}
-
 
 % for back reference in bibliography
 \usepackage[colorlinks,pdfusetitle]{hyperref}
 
-% for biblatex with biber
-\usepackage[
-  backend=biber,
-  style=alphabetic,
-  citestyle=alphabetic,
-  backref=true]{biblatex}
+
 
 % for DOI field
 \usepackage{doi}
@@ -159,7 +152,7 @@
 % Bibliography
 
 \usepackage[sorting=nyt, backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2, maxbibnames=99]{biblatex}
-
+% , backref=true
 %\defbibnote{bib-intro}{\textsf{\lipsum[1]}}
 
 \setcounter{biburllcpenalty}{100}
