@@ -207,3 +207,32 @@
 %%END Bibliography Setup%%
 
 \counterwithout{footnote}{chapter}    % \usepackage{chngcntr}這兩行的指令，若是沒有設定，\footnote 的編號是每個章節獨立計算！
+
+% 此處開始是頁首頁尾設定
+
+% 自訂格式
+% \makeatletter
+% \renewcommand{\chaptermark}[1]{\markboth{\textsc{#1}}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\thesection\quad \textsc{#1}}}
+% \makeatother
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{\thechapter\ \textsc{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ \textsc{#1}}}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{} % 清除所有頁首設定
+% \fancyhead[RE,LO]{\thepage}
+\fancyfoot{} % 清除所有頁尾設定
+\fancyfoot[RE]{\small \sffamily \thepage \quad | \quad \nouppercase{\leftmark}}
+\fancyfoot[LO]{\small \sffamily \nouppercase{\rightmark} \quad | \quad \thepage}
+% \renewcommand{\headrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
+% \renewcommand{\footrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
+% 移除標線
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\footskip}{40pt}

@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{NTHUthesis}[June, 2021 v1.0 Typesetting theses for members of National Tsing Hua University, Hsinchu, Taiwan]
 
-\LoadClass[a4paper,12pt]{report}
+\LoadClass[a4paper,12pt,twoside]{report}
 
 % Required packages
 \RequirePackage[margin=1in]{geometry}
