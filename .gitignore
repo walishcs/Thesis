@@ -6,3 +6,10 @@
 *.gz
 *.fls
 *.blg
+*.aux
+*.bcf
+*.log
+*.lof
+*.lot
+*.out
+*.toc
