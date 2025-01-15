@@ -1,13 +1,23 @@
 \newpage
 \newgeometry{margin=0.9in}
-\begin{landscape}
-    \appendix
-    \setcounter{secnumdepth}{0}
-    \section{Appendix: Seediq wordlist} \label{wordlist}
-    \renewcommand{\arraystretch}{1}
+
+\appendix
+\setcounter{chapter}{0}
+\setcounter{secnumdepth}{0}
+\pagestyle{appendixstyle}
+% \renewcommand\chaptername{Appendix}
+\phantomsection
+\chapter*{Appendix\\Seediq wordlist} \label{wordlist}
+\addcontentsline{toc}{chapter}{Appendix}
+\markboth{Appendix}{Appendix} % 更新頁眉或頁尾
+
+This appendix contains approximately 700 Proto-Seediq etyma, with reconstructions based on the lexicons of Tgdaya, Central Toda, Central Truku, and Eastern Truku. The list is organized alphabetically by English glosses. Words that can be reconstructed to at least the level of a proto-language for one of the subgroups are included, even if they are unrelated to the Proto-Seediq etyma. Additionally, some entries are marked with parentheses because they do not reflect regularly but may be highly related in form. Verbs are annotated with abbreviations of their voice, such as *məkan `to eat (AV)' and *uqun `to eat (PV)'.
+
+\begin{landscape}    
+\renewcommand{\arraystretch}{1}
 \begin{longtable}[c]{@{}p{3cm}<{\raggedright}p{2.75cm}<{\raggedright}p{2.75cm}<{\raggedright}p{2.75cm}<{\raggedright}p{2.75cm}<{\raggedright}p{2.75cm}<{\raggedright}p{2.75cm}<{\raggedright}p{2.75cm}<{\raggedright}@{}}
 %\toprule
-\textbf{Gloss}   & \textbf{P-Seediq}                         & \textbf{Tgdaya}  & \textbf{P-Toda-Truku}                        & \textbf{Toda}  & \textbf{P-Truku}                        & \textbf{C.Truku}            & \textbf{E.Truku}                                                          \\* \midrule
+\textbf{Gloss}   & \textbf{P-Seediq}                         & \textbf{Tgdaya}  & \textbf{P-Toda-Truku}                        & \textbf{C. Toda}  & \textbf{P-Truku}                        & \textbf{C. Truku}            & \textbf{E. Truku}                                                          \\* \midrule
 \endhead
 %
 %\bottomrule

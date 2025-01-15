@@ -236,3 +236,10 @@
 \renewcommand{\footrulewidth}{0pt}
 
 \setlength{\footskip}{40pt}
+
+\fancypagestyle{appendixstyle}{
+    \fancyhead{} % 清空預設樣式
+    \fancyfoot{} % 清除所有頁尾設定
+    \fancyfoot[RE]{\small \sffamily \thepage \quad | \quad Appendix} 
+    \fancyfoot[LO]{\small \sffamily Appendix \quad | \quad \thepage} % 中間頁眉顯示附錄標題
+}
