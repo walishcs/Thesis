@@ -226,9 +226,10 @@
 \fancyhf{}
 \fancyhead{} % 清除所有頁首設定
 % \fancyhead[RE,LO]{\thepage}
+\fancyhead[R]{\small \sffamily \thepage}
+\fancyhead[LE]{\small \sffamily \nouppercase{\leftmark}}
+\fancyhead[LO]{\small \sffamily \nouppercase{\rightmark}}
 \fancyfoot{} % 清除所有頁尾設定
-\fancyfoot[RE]{\small \sffamily \thepage \quad | \quad \nouppercase{\leftmark}}
-\fancyfoot[LO]{\small \sffamily \nouppercase{\rightmark} \quad | \quad \thepage}
 % \renewcommand{\headrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
 % \renewcommand{\footrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
 % 移除標線
@@ -240,6 +241,6 @@
 \fancypagestyle{appendixstyle}{
     \fancyhead{} % 清空預設樣式
     \fancyfoot{} % 清除所有頁尾設定
-    \fancyfoot[RE]{\small \sffamily \thepage \quad | \quad Appendix} 
-    \fancyfoot[LO]{\small \sffamily Appendix \quad | \quad \thepage} % 中間頁眉顯示附錄標題
+    \fancyhead[R]{\small \sffamily \thepage} 
+    \fancyhead[L]{\small \sffamily Appendix} % 中間頁眉顯示附錄標題
 }
