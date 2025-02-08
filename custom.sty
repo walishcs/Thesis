@@ -227,8 +227,8 @@
 \fancyhead{} % 清除所有頁首設定
 % \fancyhead[RE,LO]{\thepage}
 \fancyhead[R]{\small \sffamily \thepage}
-\fancyhead[LE]{\small \sffamily \nouppercase{\leftmark}}
-\fancyhead[LO]{\small \sffamily \nouppercase{\rightmark}}
+% \fancyhead[LE]{\small \sffamily \nouppercase{\leftmark}}
+% \fancyhead[LO]{\small \sffamily \nouppercase{\rightmark}}
 \fancyfoot{} % 清除所有頁尾設定
 % \renewcommand{\headrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
 % \renewcommand{\footrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
@@ -236,11 +236,30 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\setlength{\footskip}{40pt}
+% \setlength{\footskip}{40pt}
 
 \fancypagestyle{appendixstyle}{
     \fancyhead{} % 清空預設樣式
     \fancyfoot{} % 清除所有頁尾設定
     \fancyhead[R]{\small \sffamily \thepage} 
-    \fancyhead[L]{\small \sffamily Appendix} % 中間頁眉顯示附錄標題
+    % \fancyhead[L]{\small \sffamily Appendix} % 中間頁眉顯示附錄標題
+}
+
+% 正文前的 plain 樣式（頁碼右上角）
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[R]{\small \sffamily \thepage} % 讓正文前的章節開頭頁碼在右上角
+    \fancyfoot{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% 正文開始後恢復預設 plain 樣式
+\newcommand{\restoreDefaultPlain}{
+    \fancypagestyle{plain}{
+        \fancyhf{}
+        \fancyfoot[C]{\thepage} % 讓正文的章節開頭頁碼回到頁尾
+        \renewcommand{\headrulewidth}{0pt}
+        \renewcommand{\footrulewidth}{0pt}
+    }
 }

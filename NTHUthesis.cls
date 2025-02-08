@@ -4,7 +4,7 @@
 \LoadClass[a4paper,12pt,twoside]{report}
 
 % Required packages
-\RequirePackage[margin=1in]{geometry}
+\RequirePackage[headheight=14pt,margin=1in]{geometry}
 \RequirePackage{indentfirst}
 \RequirePackage{setspace}
 \RequirePackage{CJKutf8}
@@ -73,7 +73,7 @@
     \vspace{1.5\baselineskip}
     %中~~華~~民~~國~~
     \zhdigits{\@yearZH}~~年~~{\@monthZH}~~月\\
-    December 2024\\
+    June 2025\\
     \end{spacing}
     \end{CJK*}
     \end{center}
@@ -96,15 +96,16 @@
 \newcommand{\maketoc}{
     \tableofcontents
     \clearpage
+    \thispagestyle{fancy}
     \listoftables
+    \clearpage
+    \thispagestyle{fancy}
     \newpage
-    %\begingroup
-    %\let\clearpage\relax
     \listoffigures
     \listofmaps
-    %\listofmaps
+    \clearpage
+    \thispagestyle{fancy}
     \addcontentsline{toc}{chapter}{List of Maps}
-    %\endgroup
     \clearpage
 }
 
