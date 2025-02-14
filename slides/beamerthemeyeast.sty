@@ -1,0 +1,326 @@
+\ProvidesPackage{beamerthemeyeast}
+
+\usepackage{bookmark} % a new bookmark (outline) organization
+\usepackage{etoolbox} % for \ifdefempty
+\usepackage{concmath} % for better math fonts
+%\usepackage[sfdefault]{sourcesanspro}
+%\usepackage[ttdefault]{sourcecodepro}
+%\usepackage[rmdefault]{sourceserifpro}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{xcolor}
+\usepackage{listliketab} %對齊用
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{fontspec} 
+\usepackage{xeCJK}
+\usepackage{multirow}
+\usepackage{longtable}
+
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+
+\mode<presentation>
+
+  \usetheme{default}
+  \usefonttheme{serif}     % bold font for title, frametitle, etc.
+  \usefonttheme{professionalfonts} % serif font for math letters
+  
+  \setmainfont{Fira Sans Regular}[%
+     ItalicFont     = {Fira Sans Italic},
+     BoldFont       = {Fira Sans SemiBold},
+     BoldItalicFont = {Fira Sans SemiBold Italic}]
+  \setCJKmainfont{Noto Sans CJK TC} %中文字體main跟mono都需要哦，最後面的SC是簡體中文，也可以改成TC，不過SC的破字會比較少
+    \setCJKmonofont{Noto Sans CJK TC}
+    \XeTeXlinebreaklocale "zh" %文字間隔
+    \XeTeXlinebreakskip = 0pt plus 1pt
+ 
+
+  % define the left and right margin of text
+  \setbeamersize{text margin left=.05\paperwidth, text margin right=.05\paperwidth}
+
+  % define fonts
+  \setbeamerfont{title}{series=\mdseries, size=\LARGE}
+  \setbeamerfont{subtitle}{shape=\upshape, size=\large}
+  \setbeamerfont{author}{series=\mdseries, shape=\upshape}
+  \setbeamerfont{date}{series=\mdseries, shape=\scshape}
+  \setbeamerfont{frametitle}{series=\bfseries, shape=\upshape}
+  \setbeamerfont{author in head/foot}{shape=\upshape, size=\scriptsize}
+  \setbeamerfont{section in head/foot}{shape=\upshape, size=\scriptsize}
+  \setbeamerfont{number in head/foot}{shape=\upshape, size=\scriptsize}
+  \setbeamerfont{section page}{series=\bfseries, shape=\upshape, size=\Large}
+  \setbeamerfont{subsection page}{series=\bfseries, shape=\upshape, size=\normalsize}
+
+  % define colors
+  \definecolor{Dark}{HTML}{363237}
+  \colorlet{Light}{Dark!5!}
+  \colorlet{Grey}{Dark!90!}
+  \definecolor{Primary}{HTML}{73605b}
+  \definecolor{Secondary}{HTML}{2d4262}
+  \definecolor{Tertiary}{HTML}{d09683}
+
+  % define template colors
+  \setbeamercolor{frametitle}{fg=Primary}
+  \setbeamercolor{block title}{fg=Primary, bg=Primary!25}
+  \setbeamercolor{block title alerted}{fg=Tertiary!140, bg=Tertiary!25}
+  \setbeamercolor{block title example}{fg=Secondary, bg=Secondary!25}
+  \setbeamercolor{block body}{bg=Light}
+  \setbeamercolor{block body alerted}{bg=Light}
+  \setbeamercolor{block body example}{bg=Light}
+  \setbeamercolor{normal text}{fg=Dark}
+  \setbeamercolor{alerted text}{fg=Tertiary!150}
+  \setbeamercolor{example text}{fg=Secondary}
+  \setbeamercolor{title}{fg=Primary}
+  \setbeamercolor{subtitle}{fg=Tertiary}
+  \setbeamercolor{author}{fg=Grey}
+  \setbeamercolor{date}{fg=Grey}
+  \setbeamercolor{institute}{fg=Grey}
+  \setbeamercolor{section page}{fg=Primary}
+  \setbeamercolor{subsection page}{fg=Tertiary}
+  \setbeamercolor{author in head/foot}{fg=Secondary, bg=Tertiary}
+  \setbeamercolor{section in head/foot}{fg=Tertiary!10, bg=Secondary}
+  \setbeamercolor{number in head/foot}{fg=Secondary, bg=Tertiary}
+  \setbeamercolor{itemize item}{fg=Secondary}
+  \setbeamercolor{itemize subitem}{fg=Secondary}
+  \setbeamercolor{itemize subsubitem}{fg=Secondary}
+  \setbeamercolor{enumerate item}{fg=Secondary}
+  \setbeamercolor{enumerate subitem}{fg=Secondary}
+  \setbeamercolor{enumerate subsubitem}{fg=Secondary}
+  \setbeamercolor{description item}{fg=Secondary}
+  \setbeamercolor{caption name}{fg=Secondary}
+  \setbeamercolor{section in toc}{fg=Grey}
+  \setbeamercolor{subsection in toc}{fg=Primary}
+  \setbeamercolor{math text}{fg=Grey}
+
+  % dim the animated text
+  \setbeamercovered{transparent}
+
+  % redefine title page
+  \setbeamertemplate{title page}{%
+    \center
+    \vfill
+    {
+      \usebeamerfont{title}
+      \usebeamercolor[fg]{title}
+      \inserttitle
+      \par
+    }%
+    % show subtitle if it's defined
+    \ifdefempty{\insertsubtitle}{\relax}{
+      \usebeamerfont{subtitle}
+      \usebeamercolor[fg]{subtitle}
+      \insertsubtitle
+      \par
+    }%
+    \vspace{20pt}
+    {
+      \usebeamerfont{author}
+      \usebeamercolor[fg]{author}
+      \insertauthor
+      \par
+    }%
+    % show institute if it's defined
+    \ifdefempty{\insertinstitute}{\relax}{
+      \usebeamerfont{institute}
+      \usebeamercolor[fg]{insititute}
+      \footnotesize
+      \insertinstitute
+      \par
+    }%
+    {
+      \usebeamerfont{date}
+      \usebeamercolor[fg]{date}
+      \footnotesize
+      \insertdate
+      \par
+    }%
+  }
+
+  % define footline
+  \setbeamertemplate{footline}{%
+    \hbox{%
+      \begin{beamercolorbox}[
+        wd=.1\paperwidth,
+        ht=4ex,
+        dp=2ex,
+        center]{author in head/foot}
+        \usebeamerfont{author in head/foot}
+        \insertshortauthor
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[
+        wd=.8\paperwidth,
+        ht=4ex,
+        dp=2ex,
+        center]{section in head/foot}%
+        \usebeamerfont{section in head/foot}
+        % display priority: subsection > section > title
+        \ifdefempty{\insertsection}{
+          \insertshorttitle
+        }{
+          \ifdefempty{\insertsubsectionhead}{
+            \insertsection
+          }{
+            \insertsubsectionhead
+          }
+        }
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[
+        wd=.1\paperwidth,
+        ht=4ex,
+        dp=2ex,
+        center]{number in head/foot}
+        \usebeamerfont{number in head/foot}
+        \insertframenumber\ /\ \inserttotalframenumber
+      \end{beamercolorbox}%
+    }
+  }
+
+  % remove navi symbols
+  \setbeamertemplate{navigation symbols}{}
+
+  % use rounded blocks with shadow
+  \setbeamertemplate{blocks}[rounded=false, shadow=false]
+
+  \setbeamertemplate{section in toc}{
+    \inserttocsectionnumber. \inserttocsection%
+  }
+  \setbeamertemplate{subsection in toc}{
+    \quad\inserttocsectionnumber.\inserttocsubsectionnumber. \inserttocsubsection\par%
+  }
+
+  % redefine itemize items
+  \setbeamertemplate{itemize item}{
+    \normalsize\raise1pt\hbox{\donotcoloroutermaths$\bullet$}
+  }
+  \setbeamertemplate{itemize subitem}{
+    \scriptsize\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}
+  }
+  \setbeamertemplate{itemize subsubitem}{
+    \tiny\raise0.4pt\hbox{\donotcoloroutermaths$\blacksquare$}
+  }
+
+  % redefine enumerate items
+  \setbeamertemplate{enumerate item}{\arabic{enumi}.}
+  \setbeamertemplate{enumerate subitem}{\alph{enumii}.}
+  \setbeamertemplate{enumerate subsubitem}{\roman{enumiii}.}
+
+  % insert section head frame
+  \AtBeginSection[]{
+    \begin{frame}[plain,noframenumbering]
+      \vfill
+      \center
+      \usebeamerfont{section page}
+      \usebeamercolor[fg]{section page}
+      \insertsectionhead
+      \par
+      \vfill
+    \end{frame}
+  }
+  \AtBeginSubsection[]{
+    \begin{frame}[plain,noframenumbering]
+      \vfill
+      \center
+      \usebeamerfont{section page}
+      \usebeamercolor[fg]{section page}
+      \insertsectionhead
+      \par%
+      \usebeamerfont{subsection page}
+      \usebeamercolor[fg]{subsection page}
+      \insertsubsectionhead
+      \par%
+      \vfill
+    \end{frame}
+  }
+
+  % remove frame numbering from title page
+  \renewcommand{\maketitle}{
+    \begin{frame}[plain,noframenumbering]
+      \titlepage
+    \end{frame}
+  }
+  
+  % Section 前顯示進度
+ \AtBeginSection[]{
+	\begin{frame}{Outline}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+\AtBeginSubsection[]{
+	\begin{frame}{Outline}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+
+% 進度條
+\setbeamercolor{progress bar progress}{use=progress bar,bg=progress bar.fg}
+\defbeamertemplate{headline}{progress bar}{
+\dimen0=\paperwidth
+\multiply\dimen0 by \insertframenumber
+\divide\dimen0 by \inserttotalframenumber
+\edef\progressbarwidth{\the\dimen0}
+\leavevmode%
+\begin{beamercolorbox}[wd=\paperwidth,ht=1ex,dp=0.1ex]{progress bar}
+\begin{beamercolorbox}[wd=\progressbarwidth,ht=1ex,dp=0.1ex]{progress bar progress}
+
+\end{beamercolorbox}%
+\end{beamercolorbox}%
+}
+\setbeamercolor{progress bar}{fg=Secondary}
+
+
+% Bibliography
+\setbeamertemplate{bibliography item}[text]
+\usepackage[backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2]{biblatex}
+\renewcommand*{\nameyeardelim}{\space}
+\renewcommand*{\postnotedelim}{\addcolon\space}
+\renewcommand*{\bibpagespunct}{\addcolon\space}
+\DefineBibliographyStrings{english}{%
+  page             = {},
+  pages            = {},
+} 
+\renewcommand*{\bibfont}{\footnotesize}
+
+\newcommand{\sameyear}[1]{}
+
+\usepackage{xpatch}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+\xpatchbibmacro{date+extradate}{%
+  \printtext[parens]%
+}{%
+  \setunit{\addperiod\space}%
+  \printtext%
+}{}{}
+
+\NewBibliographyString{toappear}
+\DefineBibliographyStrings{english}{%
+  toappear = {to appear},
+}
+
+%Add comma between two authors in bibliography only
+\AtBeginBibliography{\renewcommand*{\finalnamedelim}{
+  \finalandcomma
+  \addspace\bibstring{and}\space}  
+ }
+
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection]{citetitle}{#1}
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection]{title}{#1}
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat[article,book,inproceedings,misc,inbook,incollection,thesis]{addendum}{#1\nopunct}
+\DeclareFieldFormat[article,inproceedings,misc,inbook,incollection,thesis]{volume}{#1}
+\renewbibmacro{in:}{}
+
+\DefineBibliographyStrings{american}{phdthesis = {PhD dissertation}}
+\urlstyle{same}
+
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry location}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+
+%%END Bibliography Setup%%
+
+\mode<all>
