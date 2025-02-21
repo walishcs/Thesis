@@ -17,7 +17,8 @@
 \usepackage{xeCJK}
 \usepackage{multirow}
 \usepackage{longtable}
-
+\usepackage{arydshln}
+\usepackage[linguistics]{forest}
 
 
 \setlength{\parindent}{0pt}
@@ -254,21 +255,21 @@
 	\end{frame}
 }
 
-% 進度條
-\setbeamercolor{progress bar progress}{use=progress bar,bg=progress bar.fg}
-\defbeamertemplate{headline}{progress bar}{
-\dimen0=\paperwidth
-\multiply\dimen0 by \insertframenumber
-\divide\dimen0 by \inserttotalframenumber
-\edef\progressbarwidth{\the\dimen0}
-\leavevmode%
-\begin{beamercolorbox}[wd=\paperwidth,ht=1ex,dp=0.1ex]{progress bar}
-\begin{beamercolorbox}[wd=\progressbarwidth,ht=1ex,dp=0.1ex]{progress bar progress}
+% % 進度條
+% \setbeamercolor{progress bar progress}{use=progress bar,bg=progress bar.fg}
+% \defbeamertemplate{headline}{progress bar}{
+% \dimen0=\paperwidth
+% \multiply\dimen0 by \insertframenumber
+% \divide\dimen0 by \inserttotalframenumber
+% \edef\progressbarwidth{\the\dimen0}
+% \leavevmode%
+% \begin{beamercolorbox}[wd=\paperwidth,ht=1ex,dp=0.1ex]{progress bar}
+% \begin{beamercolorbox}[wd=\progressbarwidth,ht=1ex,dp=0.1ex]{progress bar progress}
 
-\end{beamercolorbox}%
-\end{beamercolorbox}%
-}
-\setbeamercolor{progress bar}{fg=Secondary}
+% \end{beamercolorbox}%
+% \end{beamercolorbox}%
+% }
+% \setbeamercolor{progress bar}{fg=Secondary}
 
 
 % Bibliography
