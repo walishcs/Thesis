@@ -7,7 +7,7 @@
 \RequirePackage[headheight=14pt,margin=1in]{geometry}
 \RequirePackage{indentfirst}
 \RequirePackage{setspace}
-% \RequirePackage{CJKutf8}
+\RequirePackage{CJKutf8}
 \RequirePackage{tocbibind}
 \RequirePackage{hyperref}
 \RequirePackage{tikz}
