@@ -50,19 +50,33 @@
 \maketoc
 
 %%% Optional %%%
-\begingroup
-\phantomsection
+% \begingroup
+% \phantomsection
+% \addcontentsline{toc}{chapter}{List of Abbreviations}
+% \chapter*{List of Abbreviations}
+% \thispagestyle{fancy}
+% \setstretch{1.75}
+% %\printacronyms[name=List of Abbreviations]
+% \begin{flushleft}
+%     \begin{multicols}{2}
+%         \printacronyms[heading=none]
+%     \end{multicols}  
+% \end{flushleft}
+% \endgroup
+
+\clearpage
 \chapter*{List of Abbreviations}
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Abbreviations}
 \thispagestyle{fancy}
-\setstretch{1.75}
-%\printacronyms[name=List of Abbreviations]
+
+% 這裡再放你實際印出縮寫清單的指令
+% 例如 glossaries 套件的 \printacronyms 之類
 \begin{flushleft}
     \begin{multicols}{2}
         \printacronyms[heading=none]
     \end{multicols}  
 \end{flushleft}
-\addcontentsline{toc}{chapter}{List of Abbreviations}
-\endgroup
 
 
 \clearpage

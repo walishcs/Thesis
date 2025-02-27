@@ -92,20 +92,57 @@
 
 
 
-\newcommand{\maketoc}{
+% \newcommand{\maketoc}{
+%     \tableofcontents
+%     \clearpage
+%     \thispagestyle{fancy}
+%     \listoftables
+%     \clearpage
+%     \thispagestyle{fancy}
+%     \newpage
+%     \listoffigures
+%     \clearpage
+%     \thispagestyle{fancy}
+%     \newpage
+%     \addcontentsline{toc}{chapter}{List of Maps}
+%     \listofmaps
+%     \clearpage
+%     \thispagestyle{fancy}
+%     \newpage
+% }
+
+\newcommand{\maketoc}{%
+    % 為保險起見，先換到新頁
+    \clearpage
+    
+    % 目錄
     \tableofcontents
     \clearpage
     \thispagestyle{fancy}
+    
+    % List of Tables
+    % \chapter*{List of Tables}  % 不想顯示章號，所以用 *
+    \phantomsection            % 若用 hyperref, 需這行才能正確超連結
+    % \addcontentsline{toc}{chapter}{List of Tables}
     \listoftables
     \clearpage
     \thispagestyle{fancy}
-    \newpage
+    
+    % List of Figures
+    % \chapter*{List of Figures}
+    \phantomsection
+    % \addcontentsline{toc}{chapter}{List of Figures}
     \listoffigures
+    \clearpage
+    \thispagestyle{fancy}
+    
+    % List of Maps
+    % \chapter*{List of Maps}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Maps}
     \listofmaps
     \clearpage
     \thispagestyle{fancy}
-    \addcontentsline{toc}{chapter}{List of Maps}
-    \clearpage
 }
 
 \newcommand{\makeenv}[3]{
