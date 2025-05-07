@@ -1,0 +1,15 @@
+#!/bin/bash
+# This wrapper auto-runs platform-specific scripts
+
+case "$(uname -s)" in
+    Linux|Darwin)
+        bash ./run.sh "$@"
+        ;;
+    MINGW*|MSYS*|CYGWIN*|Windows_NT)
+        cmd.exe /c run.bat %*
+        ;;
+    *)
+        echo "Unsupported OS"
+        exit 1
+        ;;
+esac
