@@ -1,5 +1,6 @@
 #!/bin/bash
 # This wrapper auto-runs platform-specific scripts
+# 無權限的話先跑 chmod +x run
 
 case "$(uname -s)" in
     Linux|Darwin)
