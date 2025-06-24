@@ -71,8 +71,9 @@
         指導教授：\@advisorZH~(\@advisorEN)
     \end{tabular}\\
     \vspace{1.5\baselineskip}
-    中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月\\
-    February 2025\\
+    二〇二五~~年~~\zhdigits{\@monthZH}~~月\\
+    % 中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月\\
+    July 2025\\
     \end{spacing}
     \end{CJK*}
     \end{center}
