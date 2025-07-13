@@ -4,6 +4,7 @@
 \LoadClass[a4paper,12pt,twoside]{report}
 
 % Required packages
+% \RequirePackage[headheight=14pt,left=3cm,right=3cm,top=3cm,bottom=2.5cm]{geometry}
 \RequirePackage[headheight=14pt,margin=1in]{geometry}
 \RequirePackage{indentfirst}
 \RequirePackage{setspace}
@@ -12,6 +13,7 @@
 \RequirePackage{hyperref}
 \RequirePackage{tikz}
 \RequirePackage[encoding=UTF8]{zhnumber}
+\RequirePackage{eso-pic}
 
 % Options
 \DeclareOption{master}{\gdef\@degreeZH{碩}}
@@ -21,15 +23,22 @@
 
 % Watermark of NTHU
 \ifdefined \nowatermark \else
-    \AtBeginShipout{
-        \AtBeginShipoutAddToBox{
-            \begin{tikzpicture}[overlay,remember picture]
-            \node[opacity=0.5] at (current page.center){
-                \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
-            };
-            \end{tikzpicture}
-        }
-    }  
+    % \AtBeginShipout{
+    %     \AtBeginShipoutAddToBox{
+    %         \begin{tikzpicture}[overlay,remember picture]
+    %         \node[opacity=0.5] at (current page.center){
+    %             \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
+    %         };
+    %         \end{tikzpicture}
+    %     }
+    % }  
+    \AddToShipoutPictureBG{
+        \begin{tikzpicture}[overlay,remember picture]
+        \node[opacity=0.5] at (current page.center){
+            \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
+        };
+        \end{tikzpicture}
+    }
 \fi
 
 % Default spacing
@@ -51,6 +60,16 @@
 % Customized commands
 \newcommand{\makecover}{
 \begin{titlepage}
+    % 為封面頁單獨添加浮水印
+    \ifdefined \nowatermark \else
+        \AddToShipoutPictureBG*{
+            \begin{tikzpicture}[overlay,remember picture]
+            \node[opacity=0.5] at (current page.center){
+                \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
+            };
+            \end{tikzpicture}
+        }
+    \fi
     \begin{center}
     \begin{CJK*}{UTF8}{bkai}
     \begin{spacing}{2.5}
@@ -71,9 +90,9 @@
         指導教授：\@advisorZH~(\@advisorEN)
     \end{tabular}\\
     \vspace{1.5\baselineskip}
-    二〇二五~~年~~\zhdigits{\@monthZH}~~月\\
-    % 中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月\\
-    July 2025\\
+    % 二〇二五~~年~~\zhdigits{\@monthZH}~~月\\
+    中~~華~~民~~國~~\zhdigits{\@yearZH}~~年~~\zhdigits{\@monthZH}~~月\\
+    February 2025\\
     \end{spacing}
     \end{CJK*}
     \end{center}
@@ -121,19 +140,19 @@
     \clearpage
     \thispagestyle{fancy}
     
-    % List of Tables
-    % \chapter*{List of Tables}  % 不想顯示章號，所以用 *
-    \phantomsection            % 若用 hyperref, 需這行才能正確超連結
-    % \addcontentsline{toc}{chapter}{List of Tables}
-    \listoftables
-    \clearpage
-    \thispagestyle{fancy}
-    
     % List of Figures
     % \chapter*{List of Figures}
     \phantomsection
     % \addcontentsline{toc}{chapter}{List of Figures}
     \listoffigures
+    \clearpage
+    \thispagestyle{fancy}
+        
+    % List of Tables
+    % \chapter*{List of Tables}  % 不想顯示章號，所以用 *
+    \phantomsection            % 若用 hyperref, 需這行才能正確超連結
+    % \addcontentsline{toc}{chapter}{List of Tables}
+    \listoftables
     \clearpage
     \thispagestyle{fancy}
     

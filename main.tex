@@ -13,7 +13,7 @@
 \advisorZH{廖秀娟~~博士}
 \advisorEN{Dr. Hsiu-chuan Liao}
 \yearZH{114}
-\monthZH{7}
+\monthZH{2}
 
 % Comment the following to have chapters numbered without interruption (numbering through parts)
 \makeatletter\@addtoreset{chapter}{part}\makeatother%
@@ -22,18 +22,23 @@
 
 \makecover
 
-\pagenumbering{roman}
+\thispagestyle{empty}
+\null\clearpage
 
-%%% Necessary %%%
-\begin{abstractEN}
-\input{sub/abstr/abstr_en}
-\end{abstractEN}
+\makecover
+
+\pagenumbering{roman}
 
 %%% Necessary %%%
 \begin{abstractZH}
 \input{sub/abstr/abstr_ch}
 % \zhlipsum[1][name=trad]
 \end{abstractZH}
+
+%%% Necessary %%%
+\begin{abstractEN}
+\input{sub/abstr/abstr_en}
+\end{abstractEN}
 
 % %%% Optional %%%
 \begin{abstractSED}
@@ -42,7 +47,7 @@
 
 %%% Optional %%%
 \begin{acknowledgementsEN}
-\lipsum[1-2]
+\input{sub/acknowledgements}
 \end{acknowledgementsEN}
 
 %%% Necessary %%%

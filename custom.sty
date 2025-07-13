@@ -152,7 +152,9 @@
 
 % Bibliography
 
-\usepackage[sorting=nyt, backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2, maxbibnames=99]{biblatex}
+
+% \usepackage[sorting=nyt, backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2, maxbibnames=99]{biblatex}
+\usepackage[sorting=nyt, backend=biber, style=authoryear-comp, dashed=false, maxcitenames=2, maxbibnames=99, language=american]{biblatex} %phd thesis > dissertation
 % , backref=true
 %\defbibnote{bib-intro}{\textsf{\lipsum[1]}}
 
@@ -231,6 +233,7 @@
 % \fancyhead[LE]{\small \sffamily \nouppercase{\leftmark}}
 % \fancyhead[LO]{\small \sffamily \nouppercase{\rightmark}}
 \fancyfoot{} % 清除所有頁尾設定
+% \fancyfoot[C]{\small \sffamily \thepage}
 % \renewcommand{\headrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
 % \renewcommand{\footrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
 % 移除標線
