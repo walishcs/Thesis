@@ -22,24 +22,24 @@
 \ProcessOptions\relax
 
 % Watermark of NTHU
-\ifdefined \nowatermark \else
-    % \AtBeginShipout{
-    %     \AtBeginShipoutAddToBox{
-    %         \begin{tikzpicture}[overlay,remember picture]
-    %         \node[opacity=0.5] at (current page.center){
-    %             \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
-    %         };
-    %         \end{tikzpicture}
-    %     }
-    % }  
-    \AddToShipoutPictureBG{
-        \begin{tikzpicture}[overlay,remember picture]
-        \node[opacity=0.5] at (current page.center){
-            \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
-        };
-        \end{tikzpicture}
-    }
-\fi
+% \ifdefined \nowatermark \else
+%     % \AtBeginShipout{
+%     %     \AtBeginShipoutAddToBox{
+%     %         \begin{tikzpicture}[overlay,remember picture]
+%     %         \node[opacity=0.5] at (current page.center){
+%     %             \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
+%     %         };
+%     %         \end{tikzpicture}
+%     %     }
+%     % }  
+%     \AddToShipoutPictureBG{
+%         \begin{tikzpicture}[overlay,remember picture]
+%         \node[opacity=0.5] at (current page.center){
+%             \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
+%         };
+%         \end{tikzpicture}
+%     }
+% \fi
 
 % Default spacing
 \setstretch{2}
@@ -61,15 +61,15 @@
 \newcommand{\makecover}{
 \begin{titlepage}
     % 為封面頁單獨添加浮水印
-    \ifdefined \nowatermark \else
-        \AddToShipoutPictureBG*{
-            \begin{tikzpicture}[overlay,remember picture]
-            \node[opacity=0.5] at (current page.center){
-                \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
-            };
-            \end{tikzpicture}
-        }
-    \fi
+    % \ifdefined \nowatermark \else
+    %     \AddToShipoutPictureBG*{
+    %         \begin{tikzpicture}[overlay,remember picture]
+    %         \node[opacity=0.5] at (current page.center){
+    %             \includegraphics[height=163pt,width=202pt]{nthu-logo.pdf}
+    %         };
+    %         \end{tikzpicture}
+    %     }
+    % \fi
     \begin{center}
     \begin{CJK*}{UTF8}{bkai}
     \begin{spacing}{2.5}
@@ -192,4 +192,4 @@
 \makeenvZH{acknowledgementsZH}{致謝}{Acknowledgements (Chinese)}
 \makeenv{abstractSED}{Dungus Pnatis}{Dungus Pnatis}
 \makeenv{abstractEN}{Abstract}{Abstract}
-\makeenv{acknowledgementsEN}{Kari Snhuwe - Acknowledgements - 致謝辭}{Acknowledgements}
+\makeenv{acknowledgementsEN}{Acknowledgements}{Acknowledgements}

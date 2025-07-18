@@ -20,12 +20,16 @@
 
 \begin{document}
 
-\makecover
+\makecover % 封面
 
-\thispagestyle{empty}
-\null\clearpage
+\thispagestyle{empty} 
+\null\clearpage % 一頁空白頁
 
-\makecover
+\makecover % 書名頁
+
+% 學位論文授權書
+
+\includepdf[pages=-]{sub/推薦書審定書.pdf} %指導教授推薦書、考試委員審定書
 
 \pagenumbering{roman}
 
@@ -41,9 +45,9 @@
 \end{abstractEN}
 
 % %%% Optional %%%
-\begin{abstractSED}
-\input{sub/abstr/abstr_sed}
-\end{abstractSED}
+% \begin{abstractSED}
+% \input{sub/abstr/abstr_sed}
+% \end{abstractSED}
 
 %%% Optional %%%
 \begin{acknowledgementsEN}

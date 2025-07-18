@@ -5,8 +5,9 @@
 \usepackage{unicode-math}
 \usepackage{xeCJK}
 \setCJKmainfont{AR PL UKai TW}
-\setCJKmonofont{AR PL UKai TW}
-\setCJKsansfont{AR PL UKai TW}
+\setCJKmonofont{TWKAI}
+\setCJKsansfont{TWKAI}
+\setCJKfamilyfont{twkai}[Script=Default]{TWKAI}
 %\setCJKsansfont{Noto Serif CJK TC}
 \usepackage{pdfpages}
 \usepackage{pdflscape}
@@ -229,11 +230,11 @@
 \fancyhf{}
 \fancyhead{} % 清除所有頁首設定
 % \fancyhead[RE,LO]{\thepage}
-\fancyhead[R]{\small \sffamily \thepage}
+% \fancyhead[R]{\small \sffamily \thepage}
 % \fancyhead[LE]{\small \sffamily \nouppercase{\leftmark}}
 % \fancyhead[LO]{\small \sffamily \nouppercase{\rightmark}}
 \fancyfoot{} % 清除所有頁尾設定
-% \fancyfoot[C]{\small \sffamily \thepage}
+\fancyfoot[C]{\small \sffamily \thepage}
 % \renewcommand{\headrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
 % \renewcommand{\footrulewidth}{0.4pt} % 設定頁首多一條粗細是 0.4 pt 的水平線
 % 移除標線
@@ -252,8 +253,8 @@
 % 正文前的 plain 樣式（頁碼右上角）
 \fancypagestyle{plain}{
     \fancyhf{}
-    \fancyhead[R]{\small \sffamily \thepage} % 讓正文前的章節開頭頁碼在右上角
-    \fancyfoot{}
+    % \fancyhead[R]{\small \sffamily \thepage} % 讓正文前的章節開頭頁碼在右上角
+    \fancyfoot[C]{\small \sffamily \thepage}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
